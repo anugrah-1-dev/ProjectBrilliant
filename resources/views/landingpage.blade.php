@@ -1100,13 +1100,13 @@
                         if (r.ok) {
                             buatIframe(); // video boleh di-embed
                         } else {
-                            // embedding dinonaktifkan oleh pemilik video → buka di tab baru
+                            // embedding dinonaktifkan → buka di tab baru (hindari X-Frame-Options error)
                             window.open(fallbackUrl, '_blank', 'noopener,noreferrer');
                         }
                     })
                     .catch(function() {
-                        // Gagal cek (CORS/network error) → tetap coba embed
-                        buatIframe();
+                        // CORS/network error → aman buka di tab baru juga
+                        window.open(fallbackUrl, '_blank', 'noopener,noreferrer');
                     });
             });
         });
