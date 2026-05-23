@@ -45,7 +45,7 @@ class ProgramCamp extends Model
             if (Str::startsWith($thumbnail, 'storage/')) {
                 return asset($thumbnail);
             }
-            return asset('storage/upload/camp/' . $thumbnail);
+            return asset('upload/camp/' . $thumbnail);
         }
 
         return asset('images/placeholder.jpg');
@@ -59,7 +59,7 @@ class ProgramCamp extends Model
             if (Str::startsWith($path, 'storage/')) {
                 return asset($path);
             }
-            return asset('storage/upload/camp/' . $path);
+            return asset('upload/camp/' . $path);
         });
     }
 }
