@@ -56,7 +56,7 @@
 
                 <div class="form-group">
                     <label for="video_urls">Link Video YouTube <small class="text-muted">(opsional, satu link per baris)</small></label>
-                    <textarea name="video_urls" class="form-control" rows="4"
+                    <textarea name="video_urls" id="video_urls" class="form-control" rows="4"
                         placeholder="https://www.youtube.com/watch?v=xxxxx&#10;https://youtu.be/xxxxx">{{ old('video_urls') }}</textarea>
                     <small class="text-muted">Masukkan URL YouTube, satu link per baris.</small>
                 </div>

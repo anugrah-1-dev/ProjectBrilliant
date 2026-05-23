@@ -36,8 +36,9 @@ class GalleryImage extends Model
     public function getYoutubeEmbedUrl(): ?string
     {
         if (!$this->video_url) return null;
-        // Support format: https://youtu.be/ID atau https://www.youtube.com/watch?v=ID
-        preg_match('/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $this->video_url, $matches);
+        // Support format: https://youtu.be/ID, https://www.youtube.com/watch?v=ID,
+        // https://www.youtube.com/watch?si=xxx&v=ID, dan https://youtu.be/ID?si=xxx
+        preg_match('/(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $this->video_url, $matches);
         return isset($matches[1]) ? 'https://www.youtube.com/embed/' . $matches[1] : null;
     }
 

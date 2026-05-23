@@ -786,7 +786,7 @@
                                         if ($firstMedia->thumbnail_path) {
                                             $thumbSrc = asset('storage/' . $firstMedia->thumbnail_path);
                                         } elseif ($firstMedia->video_url) {
-                                            preg_match('/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $firstMedia->video_url ?? '', $ytMatch);
+                                            preg_match('/(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $firstMedia->video_url ?? '', $ytMatch);
                                             $thumbSrc = isset($ytMatch[1]) ? 'https://img.youtube.com/vi/' . $ytMatch[1] . '/mqdefault.jpg' : null;
                                         }
                                         $isVideoThumb = true;
@@ -978,14 +978,21 @@
                                         <div class="sosmed-card" data-platform="{{ strtolower($platform) }}">
                                             <div class="sosmed-card-image">
                                                 @if (strtolower($platform) === 'youtube')
+                                                    @php $ytVideoId = getYoutubeVideoId($item->url); @endphp
+                                                    @if ($ytVideoId)
                                                     <div class="sosmed-card-video">
                                                         <iframe width="100%" height="200"
-                                                            src="https://www.youtube.com/embed/{{ getYoutubeVideoId($item->url) }}"
+                                                            src="https://www.youtube.com/embed/{{ $ytVideoId }}"
                                                             title="YouTube video player" frameborder="0"
                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                             allowfullscreen>
                                                         </iframe>
                                                     </div>
+                                                    @else
+                                                    <div class="sosmed-card-video d-flex align-items-center justify-content-center" style="background:#1e1e2e; height:200px; border-radius:8px;">
+                                                        <a href="{{ $item->url }}" target="_blank" class="text-white"><i class="fab fa-youtube fa-3x"></i></a>
+                                                    </div>
+                                                    @endif
                                                 @elseif (strtolower($platform) === 'instagram')
                                                     <a href="{{ $item->url }}" target="_blank"
                                                         rel="noopener noreferrer">

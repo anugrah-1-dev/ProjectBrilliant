@@ -125,6 +125,8 @@ class BIEPlusProgramSeeder extends Seeder
                 'harga'            => $data['harga'],
                 'features_program' => $data['features_program'],
                 'lokasi'           => 'Pare, Kediri',
+                'jadwal_mulai'     => '2026-05-04',
+                'jadwal_selesai'   => '2026-12-28',
                 'kuota'            => 50,
                 'is_active'        => 1,
                 'kursus'           => 'bieplus',

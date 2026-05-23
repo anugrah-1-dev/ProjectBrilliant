@@ -60,7 +60,7 @@
 
                 <div class="form-group">
                     <label for="video_urls">Tambah Link Video YouTube Baru <small class="text-muted">(opsional, satu link per baris)</small></label>
-                    <textarea name="video_urls" class="form-control" rows="3"
+                    <textarea name="video_urls" id="video_urls" class="form-control" rows="3"
                         placeholder="https://www.youtube.com/watch?v=xxxxx&#10;https://youtu.be/xxxxx"></textarea>
                     <small class="text-muted">Masukkan URL YouTube baru, satu link per baris.</small>
                 </div>
