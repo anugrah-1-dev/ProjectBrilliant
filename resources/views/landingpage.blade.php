@@ -1073,20 +1073,41 @@
             once: true,
         });
 
-        // YouTube lite embed — load iframe only when user clicks thumbnail
+        // YouTube lite embed — cek oEmbed dulu sebelum buat iframe
         document.querySelectorAll('.yt-lite-embed').forEach(function(wrap) {
             wrap.addEventListener('click', function() {
                 var id = this.dataset.ytId;
+                var fallbackUrl = this.dataset.ytUrl || ('https://www.youtube.com/watch?v=' + id);
                 if (!id) return;
-                var iframe = document.createElement('iframe');
-                iframe.setAttribute('width', '100%');
-                iframe.setAttribute('height', this.style.height || '200px');
-                iframe.setAttribute('src', 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0');
-                iframe.setAttribute('frameborder', '0');
-                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-                iframe.setAttribute('allowfullscreen', '');
-                iframe.style.cssText = 'border-radius:8px;width:100%;height:' + (this.style.height || '200px');
-                this.parentElement.replaceChild(iframe, this);
+                var self = this;
+                var h = this.style.height || '200px';
+
+                function buatIframe() {
+                    var iframe = document.createElement('iframe');
+                    iframe.setAttribute('width', '100%');
+                    iframe.setAttribute('height', h);
+                    iframe.setAttribute('src', 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0');
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                    iframe.setAttribute('allowfullscreen', '');
+                    iframe.style.cssText = 'border-radius:8px;width:100%;height:' + h;
+                    self.parentElement.replaceChild(iframe, self);
+                }
+
+                // Cek apakah video boleh di-embed via YouTube oEmbed API
+                fetch('https://www.youtube.com/oembed?url=' + encodeURIComponent('https://www.youtube.com/watch?v=' + id) + '&format=json')
+                    .then(function(r) {
+                        if (r.ok) {
+                            buatIframe(); // video boleh di-embed
+                        } else {
+                            // embedding dinonaktifkan oleh pemilik video → buka di tab baru
+                            window.open(fallbackUrl, '_blank', 'noopener,noreferrer');
+                        }
+                    })
+                    .catch(function() {
+                        // Gagal cek (CORS/network error) → tetap coba embed
+                        buatIframe();
+                    });
             });
         });
     </script>
