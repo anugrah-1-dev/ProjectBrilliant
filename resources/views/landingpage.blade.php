@@ -834,13 +834,20 @@
                                                 @foreach ($gallery->images as $image)
                                                     <div class="slide-item">
                                                         @if ($image->isYoutubeVideo() && $image->getYoutubeEmbedUrl())
-                                                            <iframe
-                                                                src="{{ $image->getYoutubeEmbedUrl() }}"
-                                                                frameborder="0"
-                                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                                allowfullscreen
-                                                                style="width:100%; height:400px; border-radius:8px;">
-                                                            </iframe>
+                                                            <div class="yt-lite-embed yt-modal-embed"
+                                                                data-yt-id="{{ preg_replace('/.*\/embed\/([^?]+).*/', '$1', $image->getYoutubeEmbedUrl()) }}"
+                                                                style="position:relative;cursor:pointer;background:#000;border-radius:8px;overflow:hidden;width:100%;height:400px;">
+                                                                <img src="https://img.youtube.com/vi/{{ preg_replace('/.*\/embed\/([^?]+).*/', '$1', $image->getYoutubeEmbedUrl()) }}/mqdefault.jpg"
+                                                                    alt="YouTube Video"
+                                                                    style="width:100%;height:100%;object-fit:cover;opacity:0.85;"
+                                                                    onerror="this.style.opacity='0'">
+                                                                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;">
+                                                                    <svg height="68" viewBox="0 0 68 48" width="68" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/>
+                                                                        <path d="M45 24 27 14v20" fill="#fff"/>
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
                                                         @elseif ($image->isLocalVideo())
                                                             <video controls style="max-width:100%; max-height:65vh; border-radius:8px; background:#000;">
                                                                 <source src="{{ asset('storage/' . $image->image_path) }}">
@@ -980,14 +987,18 @@
                                                 @if (strtolower($platform) === 'youtube')
                                                     @php $ytVideoId = getYoutubeVideoId($item->url); @endphp
                                                     @if ($ytVideoId)
-                                                    <div class="sosmed-card-video" id="yt-wrap-{{ $ytVideoId }}">
-                                                        <iframe width="100%" height="200"
-                                                            src="https://www.youtube.com/embed/{{ $ytVideoId }}?rel=0"
-                                                            title="YouTube video player" frameborder="0"
-                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                            allowfullscreen
-                                                            onerror="this.parentElement.innerHTML='<a href=\'{{ $item->url }}\' target=\'_blank\' rel=\'noopener noreferrer\' style=\'display:flex;align-items:center;justify-content:center;height:200px;background:#1e1e2e;border-radius:8px;\' class=\'text-white\'><i class=\'fab fa-youtube fa-3x\'></i></a>'">
-                                                        </iframe>
+                                                    <div class="yt-lite-embed" data-yt-id="{{ $ytVideoId }}" data-yt-url="{{ $item->url }}"
+                                                        style="position:relative;cursor:pointer;background:#000;border-radius:8px;overflow:hidden;height:200px;">
+                                                        <img src="https://img.youtube.com/vi/{{ $ytVideoId }}/mqdefault.jpg"
+                                                            alt="YouTube Video"
+                                                            style="width:100%;height:100%;object-fit:cover;opacity:0.85;"
+                                                            onerror="this.style.opacity='0'">
+                                                        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;">
+                                                            <svg height="48" viewBox="0 0 68 48" width="68" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/>
+                                                                <path d="M45 24 27 14v20" fill="#fff"/>
+                                                            </svg>
+                                                        </div>
                                                     </div>
                                                     @else
                                                     <div class="sosmed-card-video d-flex align-items-center justify-content-center" style="background:#1e1e2e; height:200px; border-radius:8px;">
@@ -1060,6 +1071,23 @@
         AOS.init({
             duration: 800,
             once: true,
+        });
+
+        // YouTube lite embed — load iframe only when user clicks thumbnail
+        document.querySelectorAll('.yt-lite-embed').forEach(function(wrap) {
+            wrap.addEventListener('click', function() {
+                var id = this.dataset.ytId;
+                if (!id) return;
+                var iframe = document.createElement('iframe');
+                iframe.setAttribute('width', '100%');
+                iframe.setAttribute('height', this.style.height || '200px');
+                iframe.setAttribute('src', 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0');
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                iframe.setAttribute('allowfullscreen', '');
+                iframe.style.cssText = 'border-radius:8px;width:100%;height:' + (this.style.height || '200px');
+                this.parentElement.replaceChild(iframe, this);
+            });
         });
     </script>
 

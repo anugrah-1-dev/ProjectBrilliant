@@ -39,7 +39,7 @@ class GalleryImage extends Model
         // Support format: https://youtu.be/ID, https://www.youtube.com/watch?v=ID,
         // https://www.youtube.com/watch?si=xxx&v=ID, dan https://youtu.be/ID?si=xxx
         preg_match('/(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $this->video_url, $matches);
-        return isset($matches[1]) ? 'https://www.youtube.com/embed/' . $matches[1] : null;
+        return isset($matches[1]) ? 'https://www.youtube-nocookie.com/embed/' . $matches[1] : null;
     }
 
     // Relasi: gambar ini milik satu galeri
