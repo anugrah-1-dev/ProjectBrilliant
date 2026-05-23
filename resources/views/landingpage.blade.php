@@ -980,17 +980,18 @@
                                                 @if (strtolower($platform) === 'youtube')
                                                     @php $ytVideoId = getYoutubeVideoId($item->url); @endphp
                                                     @if ($ytVideoId)
-                                                    <div class="sosmed-card-video">
+                                                    <div class="sosmed-card-video" id="yt-wrap-{{ $ytVideoId }}">
                                                         <iframe width="100%" height="200"
-                                                            src="https://www.youtube.com/embed/{{ $ytVideoId }}"
+                                                            src="https://www.youtube.com/embed/{{ $ytVideoId }}?rel=0"
                                                             title="YouTube video player" frameborder="0"
                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                            allowfullscreen>
+                                                            allowfullscreen
+                                                            onerror="this.parentElement.innerHTML='<a href=\'{{ $item->url }}\' target=\'_blank\' rel=\'noopener noreferrer\' style=\'display:flex;align-items:center;justify-content:center;height:200px;background:#1e1e2e;border-radius:8px;\' class=\'text-white\'><i class=\'fab fa-youtube fa-3x\'></i></a>'">
                                                         </iframe>
                                                     </div>
                                                     @else
                                                     <div class="sosmed-card-video d-flex align-items-center justify-content-center" style="background:#1e1e2e; height:200px; border-radius:8px;">
-                                                        <a href="{{ $item->url }}" target="_blank" class="text-white"><i class="fab fa-youtube fa-3x"></i></a>
+                                                        <a href="{{ $item->url }}" target="_blank" rel="noopener noreferrer" class="text-white"><i class="fab fa-youtube fa-3x"></i></a>
                                                     </div>
                                                     @endif
                                                 @elseif (strtolower($platform) === 'instagram')
