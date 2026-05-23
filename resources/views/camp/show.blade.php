@@ -105,12 +105,23 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body d-flex justify-content-center">
-                        <div class="sosmed-card-video" style="max-width: 560px; width: 100%;">
-                            <iframe width="100%" height="315" src="https://youtu.be/sIAlnVkQTuc?si=xa4elMNoA2Uwgj7t"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
+                        <div style="max-width: 560px; width: 100%; position: relative; cursor: pointer; background: #000; border-radius: 8px; overflow: hidden;" id="yt-tutorial-wrap">
+                            <img src="https://img.youtube.com/vi/sIAlnVkQTuc/mqdefault.jpg"
+                                alt="Tutorial Pendaftaran Camp BIE+"
+                                style="width:100%; display:block; opacity:0.85;"
+                                onerror="this.style.opacity='0'">
+                            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+                                <svg height="48" viewBox="0 0 68 48" width="68" xmlns="http://www.w3.org/2000/svg" style="pointer-events:none">
+                                    <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/>
+                                    <path d="M45 24 27 14v20" fill="#fff"/>
+                                </svg>
+                                <a href="https://www.youtube.com/watch?v=sIAlnVkQTuc&si=xa4elMNoA2Uwgj7t"
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="btn btn-danger btn-sm"
+                                    onclick="event.stopPropagation()">
+                                    <i class="fab fa-youtube me-1"></i> Tonton di YouTube
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
