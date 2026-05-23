@@ -52,6 +52,18 @@ use App\Http\Controllers\Admin\LaundryPackageController;
 |--------------------------------------------------------------------------
 */
 
+// Fallback route untuk serve file storage tanpa symlink (shared hosting)
+Route::get('/storage/{path}', function (string $path) {
+    $base     = realpath(storage_path('app/public'));
+    $fullPath = storage_path('app/public/' . $path);
+    $real     = realpath($fullPath);
+
+    if ($real === false || $base === false || strncmp($real, $base, strlen($base)) !== 0) {
+        abort(404);
+    }
+
+    return response()->file($real);
+})->where('path', '.*');
 
 
 //camp
