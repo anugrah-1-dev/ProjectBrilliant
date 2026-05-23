@@ -159,9 +159,6 @@
                                 </td>
                             </tr>
                         @empty
-                            <tr>
-                                <td colspan="13" class="text-center text-muted">Belum ada pendaftar.</td>
-                            </tr>
                         @endforelse
                     </tbody>
                 </table>
