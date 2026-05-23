@@ -158,10 +158,6 @@
                                     </div>
                                 </td>
                             </tr>
-                        @empty
-                            <tr>
-                                <td colspan="15" class="text-center py-4">Belum ada pendaftar.</td>
-                            </tr>
                         @endforelse
                     </tbody>
                 </table>
