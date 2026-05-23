@@ -119,13 +119,13 @@
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label class="form-label">Nama Permission</label>
-                        <input type="text" name="name" class="form-control" placeholder="Masukkan nama permission"
+                        <label class="form-label" for="permissionName">Nama Permission</label>
+                        <input type="text" name="name" id="permissionName" class="form-control" placeholder="Masukkan nama permission"
                             required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Guard</label>
-                        <select name="guard_name" class="form-select" required>
+                        <label class="form-label" for="guardName">Guard</label>
+                        <select name="guard_name" id="guardName" class="form-select" required>
                             <option value="web">web</option>
 
                         </select>

@@ -50,7 +50,7 @@
 
                                 <!-- Harga Biasa dan Harga Promo Berdampingan -->
                                 <div class="form-group row">
-                                    <label class="col-sm-4 col-form-label">Harga Paket</label>
+                                    <span class="col-sm-4 col-form-label">Harga Paket</span>
                                     <div class="col-sm-8">
                                         <div class="row">
                                             <div class="col-sm-6">

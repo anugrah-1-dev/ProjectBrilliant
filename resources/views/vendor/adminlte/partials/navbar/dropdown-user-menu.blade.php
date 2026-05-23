@@ -20,7 +20,7 @@
         <li class="dropdown-item d-flex justify-content-between align-items-center">
             <span>Dark Mode</span>
             <div class="form-check form-switch m-0">
-                <input class="form-check-input" type="checkbox" id="themeToggle">
+                <input class="form-check-input" type="checkbox" id="themeToggle" name="themeToggle">
             </div>
         </li>
 
@@ -35,7 +35,6 @@
                 @csrf
             </form>
         </li>
-        @include('adminlte::partials.navbar.dropdown-user-menu')
 
     </ul>
 </li>

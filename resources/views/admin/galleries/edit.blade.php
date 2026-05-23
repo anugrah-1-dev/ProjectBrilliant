@@ -26,18 +26,18 @@
 
                 <div class="form-group">
                     <label for="title">Judul Galeri</label>
-                    <input type="text" name="title" class="form-control" value="{{ old('title', $gallery->title) }}"
+                    <input type="text" name="title" id="title" class="form-control" value="{{ old('title', $gallery->title) }}"
                         required>
                 </div>
 
                 <div class="form-group">
                     <label for="description">Deskripsi</label>
-                    <textarea name="description" class="form-control">{{ old('description', $gallery->description) }}</textarea>
+                    <textarea name="description" id="description" class="form-control">{{ old('description', $gallery->description) }}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="status">Status</label>
-                    <select name="status" class="form-control">
+                    <select name="status" id="status" class="form-control">
                         <option value="1" {{ $gallery->status ? 'selected' : '' }}>Aktif</option>
                         <option value="0" {{ !$gallery->status ? 'selected' : '' }}>Nonaktif</option>
                     </select>
@@ -45,12 +45,12 @@
 
                 <div class="form-group">
                     <label for="images">Upload Foto Baru <small class="text-muted">(opsional, maks 5MB/foto)</small></label>
-                    <input type="file" name="images[]" class="form-control" multiple accept="image/*">
+                    <input type="file" name="images[]" id="images" class="form-control" multiple accept="image/*">
                     <small class="text-muted">Kosongkan jika tidak ingin menambah foto baru.</small>
                 </div>
 
                 <div class="form-group">
-                    <label for="videos">Upload Video Baru <small class="text-muted">(opsional, maks 100MB/video, format: mp4, mov, avi, webm)</small></label>
+                    <label>Upload Video Baru <small class="text-muted">(opsional, maks 100MB/video, format: mp4, mov, avi, webm)</small></label>
                     <div id="video-pairs-container"></div>
                     <button type="button" class="btn btn-sm btn-outline-secondary mt-1" onclick="addVideoPair()">
                         <i class="fas fa-plus"></i> Tambah Video

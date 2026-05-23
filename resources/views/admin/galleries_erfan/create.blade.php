@@ -23,8 +23,8 @@
             <div class="card-body">
 
                 <div class="form-group">
-                    <label>Judul Galeri</label>
-                    <input type="text" name="title" class="form-control" required value="{{ old('title') }}"
+                    <label for="title">Judul Galeri</label>
+                    <input type="text" name="title" id="title" class="form-control" required value="{{ old('title') }}"
                         placeholder="Contoh: Kelas Bersama Erfan - April 2026">
                 </div>
 
@@ -34,8 +34,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Status</label>
-                    <select name="status" class="form-control">
+                    <label for="status">Status</label>
+                    <select name="status" id="status" class="form-control">
                         <option value="1" selected>Aktif (tampil di landing page)</option>
                         <option value="0">Nonaktif</option>
                     </select>

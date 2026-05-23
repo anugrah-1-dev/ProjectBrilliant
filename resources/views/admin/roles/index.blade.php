@@ -24,12 +24,12 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-search"></i></span>
                             </div>
-                            <input type="text" id="searchInput" class="form-control"
+                            <input type="text" id="searchInput" class="form-control" aria-label="Cari berdasarkan nama role"
                                 placeholder="Cari berdasarkan nama role...">
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <select class="form-control" id="guardFilter">
+                        <select class="form-control" id="guardFilter" aria-label="Filter berdasarkan guard">
                             <option value="">Semua Guard</option>
                             <option value="web">Web</option>
                         </select>
@@ -159,7 +159,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Permissions</label>
+                            <p class="form-label fw-bold">Permissions</p>
                             <div class="row">
                                 @foreach ($permissions as $permission)
                                     <div class="col-md-3">

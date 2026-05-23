@@ -25,17 +25,17 @@
 
                 <div class="form-group">
                     <label for="title">Judul Galeri</label>
-                    <input type="text" name="title" class="form-control" required value="{{ old('title') }}">
+                    <input type="text" name="title" id="title" class="form-control" required value="{{ old('title') }}">
                 </div>
 
                 <div class="form-group">
                     <label for="description">Deskripsi (Opsional)</label>
-                    <textarea name="description" class="form-control">{{ old('description') }}</textarea>
+                    <textarea name="description" id="description" class="form-control">{{ old('description') }}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="status">Status</label>
-                    <select name="status" class="form-control">
+                    <select name="status" id="status" class="form-control">
                         <option value="1" selected>Aktif</option>
                         <option value="0">Nonaktif</option>
                     </select>
@@ -43,7 +43,7 @@
 
                 <div class="form-group">
                     <label for="images">Upload Foto <small class="text-muted">(bisa lebih dari satu, maks 5MB/foto)</small></label>
-                    <input type="file" name="images[]" class="form-control" multiple accept="image/*">
+                    <input type="file" name="images[]" id="images" class="form-control" multiple accept="image/*">
                 </div>
 
                 <div class="form-group">
