@@ -180,7 +180,7 @@
         Swal.fire({
             icon: 'success',
             title: 'Berhasil!',
-            text: '{{ session('success') }}',
+            text: "{{ session('success') }}",
             timer: 3000,
             showConfirmButton: false
         });
@@ -192,7 +192,7 @@
         Swal.fire({
             icon: 'error',
             title: 'Gagal!',
-            text: '{{ session('error') }}',
+            text: "{{ session('error') }}",
             timer: 3000,
             showConfirmButton: false
         });
