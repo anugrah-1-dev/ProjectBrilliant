@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-kampunginggrisori',
         'version' => 'dev-kampunginggrisori',
-        'reference' => '867b4a18e7ea8cabc3242751a744c39faca19fb0',
+        'reference' => '1086b00df31591ee0160e571ae10245e1fa4d99a',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -400,7 +400,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-kampunginggrisori',
             'version' => 'dev-kampunginggrisori',
-            'reference' => '867b4a18e7ea8cabc3242751a744c39faca19fb0',
+            'reference' => '1086b00df31591ee0160e571ae10245e1fa4d99a',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

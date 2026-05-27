@@ -590,6 +590,7 @@ class ComposerStaticInit8dd31c5e4df9cacfe15567af72f961a2
         'App\\Http\\Controllers\\ProgramNHCController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProgramNHCController.php',
         'App\\Http\\Controllers\\ProgramOfflinePublicController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProgramOfflinePublicController.php',
         'App\\Http\\Controllers\\ProgramOnlinePublicController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProgramOnlinePublicController.php',
+        'App\\Http\\Controllers\\StorageController' => __DIR__ . '/../..' . '/app/Http/Controllers/StorageController.php',
         'App\\Http\\Controllers\\TrackingController' => __DIR__ . '/../..' . '/app/Http/Controllers/TrackingController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',

@@ -58,6 +58,7 @@ return array(
     'App\\Http\\Controllers\\ProgramNHCController' => $baseDir . '/app/Http/Controllers/ProgramNHCController.php',
     'App\\Http\\Controllers\\ProgramOfflinePublicController' => $baseDir . '/app/Http/Controllers/ProgramOfflinePublicController.php',
     'App\\Http\\Controllers\\ProgramOnlinePublicController' => $baseDir . '/app/Http/Controllers/ProgramOnlinePublicController.php',
+    'App\\Http\\Controllers\\StorageController' => $baseDir . '/app/Http/Controllers/StorageController.php',
     'App\\Http\\Controllers\\TrackingController' => $baseDir . '/app/Http/Controllers/TrackingController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
