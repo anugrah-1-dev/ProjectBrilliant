@@ -41,28 +41,42 @@
         <div class="container">
             <!-- Bagian kiri: Foto pamflet -->
             <div class="pamflet">
-                <img src={{ asset('asset/img/arabbaru1.jpg') }} alt="Pamflet Program Brilliant Alsaeid">
+                <img src={{ asset('asset/img/arap.jpeg') }} alt="Pamflet Program Brilliant Alsaeid">
             </div>
 
             <!-- Bagian kanan: Deskripsi program -->
             <div class="program-info">
                 <h2>Program Brilliant Alsaeid Arabic Course</h2>
                 <p>
-                    Program ini dirancang bagi kamu yang ingin menguasai Bahasa Arab secara aktif maupun pasif dalam 1
-                    bulan.
-                    Tersedia kelas Muhadatsah (Mustawa Awwal, Tsani, Tsalits) dan Baca Kitab (Tamhid, Muthawassith,
-                    Mutaqaddim).
-                    Peserta akan mendapat 5 kali pertemuan sehari, dibimbing pengajar berpengalaman, belajar dengan
-                    metode menarik,
-                    dan mengikuti program tambahan seperti Khithobah, Diroasah Jama’iyyah, Musyahadah, dan Fashl
-                    Khoriji.
+                    Menyediakan program bagi kamu yang ingin menguasai Bahasa Arab, baik secara aktif maupun pasif.
+                    Dalam waktu 1 bulan, kamu akan memiliki bekal berbicara dan memahami Bahasa Arab untuk menghadapi
+                    tantangan belajar berikutnya.
                 </p>
                 <ul>
-                    <li><strong>Program Offline:</strong> Rp. 665.000</li>
-                    <li><strong>Program Online:</strong> Rp. 385.000</li>
+                    <li><strong>1 Bulan (Program + Camp):</strong> Rp. 775.000</li>
+                    <li><strong>1 Bulan (Online non Camp):</strong> Rp. 396.000</li>
+                    <li><strong>2 Pekan (Program + Camp):</strong> Rp. 475.000</li>
+                    <li><strong>2 Pekan (Online non Camp):</strong> Rp. 189.000</li>
+                </ul>
+                <p><strong>Program Muhadatsah:</strong> I'dad (basic), Mustawa Awwal, Mustawa Tsani, Mustawa Tsalits.</p>
+                <p><strong>Program Baca Kitab:</strong> Tamhid, Muthawassith, Mutaqaddim, Tarjamah.</p>
+                <p><strong>Benefit (program + camp):</strong></p>
+                <ul>
+                    <li>6 kali pertemuan sehari, 4 sesi kelas dan 2 kegiatan asrama.</li>
+                    <li>Dibimbing pengajar berpengalaman dan kompeten.</li>
+                    <li>Metode belajar bervariasi dan menarik di setiap pertemuan.</li>
+                    <li>Program tambahan: Khithobah, Diroasah Jama'iyyah, Musyahadah, dan Fashl Khoriji.</li>
+                </ul>
+                <p><strong>Benefit (program online):</strong></p>
+                <ul>
+                    <li>2x pertemuan 90 menit per hari.</li>
+                    <li>Dibimbing pengajar berpengalaman dan kompeten.</li>
+                    <li>Metode belajar bervariasi dan menarik di setiap pertemuan.</li>
+                    <li>Program tambahan: Khithobah, Diroasah, Musyahadah, dan Munaqosyah.</li>
                 </ul>
                 <p>
-                    Kontak kami via Instagram @Brilliant_alsaeid_arabic, TikTok Brilliantalsaeid
+                    Kontak: Instagram @brilliant_alsaeid_arabic, WhatsApp 0813-2996-9193, 0857-1581-4094,
+                    0858-5069-8207.
                 </p>
             </div>
 
