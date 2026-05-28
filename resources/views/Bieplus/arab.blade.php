@@ -41,7 +41,7 @@
         <div class="container">
             <!-- Bagian kiri: Foto pamflet -->
             <div class="pamflet">
-                <img src={{ asset('asset/img/arabbaru1.jpg') }} alt="Pamflet Program Brilliant Alsaeid">
+                <img src="{{ asset('asset/img/arap.jpeg') }}" alt="Pamflet Program Brilliant Alsaeid">
             </div>
 
             <!-- Bagian kanan: Deskripsi program -->
@@ -179,8 +179,10 @@
                         style="display: none;">
                         <div class="program-card">
                             <div class="program-card-image-wrapper">
-                                <img src="{{ asset('storage/' . $program->thumbnail) }}" class="program-card-img"
-                                    alt="{{ $program->nama }}">
+                                @if ($program->thumbnail)
+                                    <img src="{{ asset('storage/' . $program->thumbnail) }}" class="program-card-img"
+                                        alt="{{ $program->nama }}">
+                                @endif
                                 @if ($program->is_active)
                                     <span class="badge bg-success program-badge">Tersedia</span>
                                 @endif
