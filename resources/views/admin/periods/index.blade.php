@@ -1,6 +1,7 @@
 @extends('adminlte::page')
 
 @section('title', 'Manajemen Periode')
+@section('plugins.BootstrapSwitch', true)
 
 @section('content_header')
 <div class="d-flex justify-content-between align-items-center">

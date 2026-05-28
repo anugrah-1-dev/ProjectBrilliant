@@ -753,6 +753,21 @@
                     ],
                 ],
             ],
+            'BootstrapSwitch' => [
+                'active' => false,
+                'files' => [
+                    [
+                        'type' => 'css',
+                        'asset' => true,
+                        'location' => 'vendor/bootstrap-switch/css/bootstrap-switch.min.css',
+                    ],
+                    [
+                        'type' => 'js',
+                        'asset' => true,
+                        'location' => 'vendor/bootstrap-switch/js/bootstrap-switch.min.js',
+                    ],
+                ],
+            ],
 
 
         ],
