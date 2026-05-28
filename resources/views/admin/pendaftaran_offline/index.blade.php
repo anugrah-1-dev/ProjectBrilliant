@@ -45,16 +45,16 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Dari Tanggal:</label>
-                            <input type="date" name="start_date" class="form-control" required>
+                            <label for="start_date_offline">Dari Tanggal:</label>
+                            <input type="date" name="start_date" id="start_date_offline" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>Sampai Tanggal:</label>
-                            <input type="date" name="end_date" class="form-control" required>
+                            <label for="end_date_offline">Sampai Tanggal:</label>
+                            <input type="date" name="end_date" id="end_date_offline" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>Pilih Program Bahasa:</label>
-                            <select name="program_bahasa" class="form-control">
+                            <label for="program_bahasa_offline">Pilih Program Bahasa:</label>
+                            <select name="program_bahasa" id="program_bahasa_offline" class="form-control">
                                 <option value="">Semua Program</option>
                                 @foreach ($programBahasa as $bahasa)
                                     <option value="{{ $bahasa }}">{{ ucfirst($bahasa) }}</option>

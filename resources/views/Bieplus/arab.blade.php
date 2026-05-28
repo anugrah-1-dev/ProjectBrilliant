@@ -41,28 +41,51 @@
         <div class="container">
             <!-- Bagian kiri: Foto pamflet -->
             <div class="pamflet">
-                <img src={{ asset('asset/img/arabbaru1.jpg') }} alt="Pamflet Program Brilliant Alsaeid">
+                <img src={{ asset('asset/img/arap.jpeg') }} alt="Pamflet Program Brilliant Alsaeid">
             </div>
 
             <!-- Bagian kanan: Deskripsi program -->
             <div class="program-info">
                 <h2>Program Brilliant Alsaeid Arabic Course</h2>
                 <p>
-                    Program ini dirancang bagi kamu yang ingin menguasai Bahasa Arab secara aktif maupun pasif dalam 1
-                    bulan.
-                    Tersedia kelas Muhadatsah (Mustawa Awwal, Tsani, Tsalits) dan Baca Kitab (Tamhid, Muthawassith,
-                    Mutaqaddim).
-                    Peserta akan mendapat 5 kali pertemuan sehari, dibimbing pengajar berpengalaman, belajar dengan
-                    metode menarik,
-                    dan mengikuti program tambahan seperti Khithobah, Diroasah Jama’iyyah, Musyahadah, dan Fashl
-                    Khoriji.
+                    Menyediakan program bagi kamu yang ingin menguasai Bahasa Arab, baik secara aktif maupun pasif.
+                    Dalam waktu 1 bulan, kamu akan memiliki bekal berbicara dan memahami Bahasa Arab untuk menghadapi
+                    tantangan belajar berikutnya.
                 </p>
+
+                <h4>Daftar Harga</h4>
                 <ul>
-                    <li><strong>Program Offline:</strong> Rp. 665.000</li>
-                    <li><strong>Program Online:</strong> Rp. 385.000</li>
+                    <li><strong>1 Bulan (Program + Camp):</strong> Rp. 775.000</li>
+                    <li><strong>1 Bulan (Online non Camp):</strong> Rp. 396.000</li>
+                    <li><strong>2 Pekan (Program + Camp):</strong> Rp. 475.000</li>
+                    <li><strong>2 Pekan (Online non Camp):</strong> Rp. 189.000</li>
                 </ul>
+
+                <h4>Daftar Program</h4>
+                <ul>
+                    <li><strong>Program Muhadatsah:</strong> I'dad (basic), Mustawa Awwal, Mustawa Tsani, Mustawa Tsalits</li>
+                    <li><strong>Program Baca Kitab:</strong> Tamhid, Muthawassith, Mutaqaddim, Tarjamah</li>
+                </ul>
+
+                <h4>Benefit Program + Camp</h4>
+                <ul>
+                    <li>6 kali pertemuan sehari (4 sesi kelas &amp; 2 kegiatan asrama)</li>
+                    <li>Pengajar berpengalaman</li>
+                    <li>Metode bervariasi</li>
+                    <li>Program tambahan: Khithobah, Diroasah Jama'iyyah, Musyahadah, Fashl Khoriji</li>
+                </ul>
+
+                <h4>Benefit Program Online</h4>
+                <ul>
+                    <li>2x pertemuan 90 menit/hari</li>
+                    <li>Pengajar berpengalaman</li>
+                    <li>Metode bervariasi</li>
+                    <li>Program tambahan: Khithobah, Diroasah, Musyahadah, Munaqosyah</li>
+                </ul>
+
                 <p>
-                    Kontak kami via Instagram @Brilliant_alsaeid_arabic, TikTok Brilliantalsaeid
+                    Kontak kami via Instagram <strong>@brilliant_alsaeid_arabic</strong>,
+                    WhatsApp <strong>0813-2996-9193</strong>, <strong>0857-1581-4094</strong>, <strong>0858-5069-8207</strong>
                 </p>
             </div>
 
@@ -179,8 +202,10 @@
                         style="display: none;">
                         <div class="program-card">
                             <div class="program-card-image-wrapper">
-                                <img src="{{ asset('storage/' . $program->thumbnail) }}" class="program-card-img"
-                                    alt="{{ $program->nama }}">
+                                @if ($program->thumbnail)
+                                    <img src="{{ asset('storage/' . $program->thumbnail) }}" class="program-card-img"
+                                        alt="{{ $program->nama }}">
+                                @endif
                                 @if ($program->is_active)
                                     <span class="badge bg-success program-badge">Tersedia</span>
                                 @endif

@@ -24,41 +24,41 @@
                 @method('PUT')
 
                 <div class="form-group">
-                    <label>Judul Galeri</label>
-                    <input type="text" name="title" class="form-control"
+                    <label for="title">Judul Galeri</label>
+                    <input type="text" name="title" id="title" class="form-control"
                         value="{{ old('title', $gallery->title) }}" required>
                 </div>
 
                 <div class="form-group">
-                    <label>Deskripsi</label>
-                    <textarea name="description" class="form-control" rows="3">{{ old('description', $gallery->description) }}</textarea>
+                    <label for="description">Deskripsi</label>
+                    <textarea name="description" id="description" class="form-control" rows="3">{{ old('description', $gallery->description) }}</textarea>
                 </div>
 
                 <div class="form-group">
-                    <label>Status</label>
-                    <select name="status" class="form-control">
+                    <label for="status">Status</label>
+                    <select name="status" id="status" class="form-control">
                         <option value="1" {{ $gallery->status ? 'selected' : '' }}>Aktif</option>
                         <option value="0" {{ !$gallery->status ? 'selected' : '' }}>Nonaktif</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label>Upload Foto Baru <small class="text-muted">(opsional, maks 5MB/foto)</small></label>
-                    <input type="file" name="images[]" class="form-control" multiple accept="image/*">
+                    <label for="images">Upload Foto Baru <small class="text-muted">(opsional, maks 5MB/foto)</small></label>
+                    <input type="file" name="images[]" id="images" class="form-control" multiple accept="image/*">
                 </div>
 
                 <div class="form-group">
-                    <label>Upload Video Baru <small class="text-muted">(opsional, maks 100MB/video, format: mp4, mov, avi, webm)</small></label>
+                    <label for="add-video-btn-erfan">Upload Video Baru <small class="text-muted">(opsional, maks 100MB/video, format: mp4, mov, avi, webm)</small></label>
                     <div id="video-pairs-container"></div>
-                    <button type="button" class="btn btn-sm btn-outline-secondary mt-1" onclick="addVideoPair()">
+                    <button type="button" id="add-video-btn-erfan" class="btn btn-sm btn-outline-secondary mt-1" onclick="addVideoPair()">
                         <i class="fas fa-plus"></i> Tambah Video
                     </button>
                     <small class="text-muted d-block mt-1">Kosongkan jika tidak ingin menambah video baru.</small>
                 </div>
 
                 <div class="form-group">
-                    <label>Tambah Link Video YouTube Baru <small class="text-muted">(opsional, satu link per baris)</small></label>
-                    <textarea name="video_urls" class="form-control" rows="3"
+                    <label for="video_urls">Tambah Link Video YouTube Baru <small class="text-muted">(opsional, satu link per baris)</small></label>
+                    <textarea name="video_urls" id="video_urls" class="form-control" rows="3"
                         placeholder="https://www.youtube.com/watch?v=xxxxx"></textarea>
                 </div>
 
@@ -139,19 +139,19 @@
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label class="small font-weight-bold">Ganti File Video <span class="text-muted">(opsional, maks 100MB)</span></label>
-                                    <input type="file" name="video" class="form-control-file" accept="video/*">
+                                    <label class="small font-weight-bold" for="modal_video_{{ $image->id }}">Ganti File Video <span class="text-muted">(opsional, maks 100MB)</span></label>
+                                    <input type="file" name="video" id="modal_video_{{ $image->id }}" class="form-control-file" accept="video/*">
                                     <small class="text-muted">Kosongkan jika tidak ingin mengganti video.</small>
                                 </div>
                                 <div class="form-group mb-0">
-                                    <label class="small font-weight-bold">Ganti Foto Cover <span class="text-muted">(opsional, maks 5MB)</span></label>
+                                    <label class="small font-weight-bold" for="modal_cover_{{ $image->id }}">Ganti Foto Cover <span class="text-muted">(opsional, maks 5MB)</span></label>
                                     @if ($image->thumbnail_path)
                                         <div class="mb-1">
                                             <img src="{{ asset('storage/' . $image->thumbnail_path) }}" style="height:80px; object-fit:cover; border-radius:4px;" alt="Cover saat ini">
                                             <small class="d-block text-muted">Cover saat ini</small>
                                         </div>
                                     @endif
-                                    <input type="file" name="video_cover" class="form-control-file" accept="image/*">
+                                    <input type="file" name="video_cover" id="modal_cover_{{ $image->id }}" class="form-control-file" accept="image/*">
                                     <small class="text-muted">Kosongkan jika tidak ingin mengganti cover.</small>
                                 </div>
                             </div>
@@ -187,12 +187,12 @@
                         </button>
                     </div>
                     <div class="form-group mb-1">
-                        <label class="small mb-0">File Video <span class="text-danger">*</span></label>
-                        <input type="file" name="videos[]" class="form-control-file" accept="video/*" required>
+                        <label class="small mb-0" for="video_file_${idx}">File Video <span class="text-danger">*</span></label>
+                        <input type="file" name="videos[]" id="video_file_${idx}" class="form-control-file" accept="video/*" required>
                     </div>
                     <div class="form-group mb-0">
-                        <label class="small mb-0">Foto Cover <span class="text-muted">(opsional)</span></label>
-                        <input type="file" name="video_covers[]" class="form-control-file" accept="image/*">
+                        <label class="small mb-0" for="video_cover_${idx}">Foto Cover <span class="text-muted">(opsional)</span></label>
+                        <input type="file" name="video_covers[]" id="video_cover_${idx}" class="form-control-file" accept="image/*">
                         <small class="text-muted">Gambar yang tampil di galeri sebelum video diputar.</small>
                     </div>
                 </div>`;

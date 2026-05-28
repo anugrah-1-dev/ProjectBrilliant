@@ -47,17 +47,17 @@
                     <!-- Filter tanggal -->
                     <div class="form-group">
                         <label for="start_date">Dari Tanggal</label>
-                        <input type="date" name="start_date" class="form-control" required>
+                        <input type="date" name="start_date" id="start_date" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="end_date">Sampai Tanggal</label>
-                        <input type="date" name="end_date" class="form-control" required>
+                        <input type="date" name="end_date" id="end_date" class="form-control" required>
                     </div>
 
                     <!-- Filter program -->
                     <div class="form-group">
-                        <label>Pilih Program Bahasa:</label>
-                        <select name="program_bahasa" class="form-control">
+                        <label for="program_bahasa_online">Pilih Program Bahasa:</label>
+                        <select name="program_bahasa" id="program_bahasa_online" class="form-control">
                             <option value="">Semua Program</option>
                             @foreach ($programBahasa as $bahasa)
                                 <option value="{{ $bahasa }}">{{ ucfirst($bahasa) }}</option>

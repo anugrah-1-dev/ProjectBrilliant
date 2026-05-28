@@ -23,40 +23,40 @@
             <div class="card-body">
 
                 <div class="form-group">
-                    <label>Judul Galeri</label>
-                    <input type="text" name="title" class="form-control" required value="{{ old('title') }}"
+                    <label for="title">Judul Galeri</label>
+                    <input type="text" name="title" id="title" class="form-control" required value="{{ old('title') }}"
                         placeholder="Contoh: Kelas Bersama Erfan - April 2026">
                 </div>
 
                 <div class="form-group">
-                    <label>Deskripsi <small class="text-muted">(opsional)</small></label>
-                    <textarea name="description" class="form-control" rows="3">{{ old('description') }}</textarea>
+                    <label for="description">Deskripsi <small class="text-muted">(opsional)</small></label>
+                    <textarea name="description" id="description" class="form-control" rows="3">{{ old('description') }}</textarea>
                 </div>
 
                 <div class="form-group">
-                    <label>Status</label>
-                    <select name="status" class="form-control">
+                    <label for="status">Status</label>
+                    <select name="status" id="status" class="form-control">
                         <option value="1" selected>Aktif (tampil di landing page)</option>
                         <option value="0">Nonaktif</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label>Upload Foto <small class="text-muted">(bisa lebih dari satu, maks 5MB/foto)</small></label>
-                    <input type="file" name="images[]" class="form-control" multiple accept="image/*">
+                    <label for="images">Upload Foto <small class="text-muted">(bisa lebih dari satu, maks 5MB/foto)</small></label>
+                    <input type="file" name="images[]" id="images" class="form-control" multiple accept="image/*">
                 </div>
 
                 <div class="form-group">
-                    <label>Upload Video Lokal <small class="text-muted">(opsional, maks 100MB/video, format: mp4, mov, avi, webm)</small></label>
+                    <label for="add-video-btn-erfan">Upload Video Lokal <small class="text-muted">(opsional, maks 100MB/video, format: mp4, mov, avi, webm)</small></label>
                     <div id="video-pairs-container"></div>
-                    <button type="button" class="btn btn-sm btn-outline-secondary mt-1" onclick="addVideoPair()">
+                    <button type="button" id="add-video-btn-erfan" class="btn btn-sm btn-outline-secondary mt-1" onclick="addVideoPair()">
                         <i class="fas fa-plus"></i> Tambah Video
                     </button>
                 </div>
 
                 <div class="form-group">
-                    <label>Link Video YouTube <small class="text-muted">(opsional, satu link per baris)</small></label>
-                    <textarea name="video_urls" class="form-control" rows="4"
+                    <label for="video_urls">Link Video YouTube <small class="text-muted">(opsional, satu link per baris)</small></label>
+                    <textarea name="video_urls" id="video_urls" class="form-control" rows="4"
                         placeholder="https://www.youtube.com/watch?v=xxxxx&#10;https://youtu.be/xxxxx">{{ old('video_urls') }}</textarea>
                 </div>
 
@@ -83,12 +83,12 @@ function addVideoPair() {
                 </button>
             </div>
             <div class="form-group mb-1">
-                <label class="small mb-0">File Video <span class="text-danger">*</span></label>
-                <input type="file" name="videos[]" class="form-control-file" accept="video/*" required>
+                <label class="small mb-0" for="video_file_${idx}">File Video <span class="text-danger">*</span></label>
+                <input type="file" name="videos[]" id="video_file_${idx}" class="form-control-file" accept="video/*" required>
             </div>
             <div class="form-group mb-0">
-                <label class="small mb-0">Foto Cover <span class="text-muted">(opsional)</span></label>
-                <input type="file" name="video_covers[]" class="form-control-file" accept="image/*">
+                <label class="small mb-0" for="video_cover_${idx}">Foto Cover <span class="text-muted">(opsional)</span></label>
+                <input type="file" name="video_covers[]" id="video_cover_${idx}" class="form-control-file" accept="image/*">
                 <small class="text-muted">Gambar yang tampil di galeri sebelum video diputar.</small>
             </div>
         </div>`;

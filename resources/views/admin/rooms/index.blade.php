@@ -353,7 +353,7 @@
 
 
                         <div class="mb-3">
-                            <label class="form-label">Penghuni Kamar</label>
+                            <p class="form-label">Penghuni Kamar</p>
                             <ul id="listPenghuni" class="list-group">
 
                             </ul>

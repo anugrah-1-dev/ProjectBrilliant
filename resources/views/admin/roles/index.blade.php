@@ -159,7 +159,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Permissions</label>
+                            <p class="form-label">Permissions</p>
                             <div class="row">
                                 @foreach ($permissions as $permission)
                                     <div class="col-md-3">

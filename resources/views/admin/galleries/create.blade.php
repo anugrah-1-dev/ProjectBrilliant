@@ -25,17 +25,17 @@
 
                 <div class="form-group">
                     <label for="title">Judul Galeri</label>
-                    <input type="text" name="title" class="form-control" required value="{{ old('title') }}">
+                    <input type="text" name="title" id="title" class="form-control" required value="{{ old('title') }}">
                 </div>
 
                 <div class="form-group">
                     <label for="description">Deskripsi (Opsional)</label>
-                    <textarea name="description" class="form-control">{{ old('description') }}</textarea>
+                    <textarea name="description" id="description" class="form-control">{{ old('description') }}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="status">Status</label>
-                    <select name="status" class="form-control">
+                    <select name="status" id="status" class="form-control">
                         <option value="1" selected>Aktif</option>
                         <option value="0">Nonaktif</option>
                     </select>
@@ -43,20 +43,20 @@
 
                 <div class="form-group">
                     <label for="images">Upload Foto <small class="text-muted">(bisa lebih dari satu, maks 5MB/foto)</small></label>
-                    <input type="file" name="images[]" class="form-control" multiple accept="image/*">
+                    <input type="file" name="images[]" id="images" class="form-control" multiple accept="image/*">
                 </div>
 
                 <div class="form-group">
-                    <label>Upload Video Lokal <small class="text-muted">(opsional, maks 100MB/video, format: mp4, mov, avi, webm)</small></label>
+                    <label for="add-video-btn">Upload Video Lokal <small class="text-muted">(opsional, maks 100MB/video, format: mp4, mov, avi, webm)</small></label>
                     <div id="video-pairs-container"></div>
-                    <button type="button" class="btn btn-sm btn-outline-secondary mt-1" onclick="addVideoPair()">
+                    <button type="button" id="add-video-btn" class="btn btn-sm btn-outline-secondary mt-1" onclick="addVideoPair()">
                         <i class="fas fa-plus"></i> Tambah Video
                     </button>
                 </div>
 
                 <div class="form-group">
                     <label for="video_urls">Link Video YouTube <small class="text-muted">(opsional, satu link per baris)</small></label>
-                    <textarea name="video_urls" class="form-control" rows="4"
+                    <textarea name="video_urls" id="video_urls" class="form-control" rows="4"
                         placeholder="https://www.youtube.com/watch?v=xxxxx&#10;https://youtu.be/xxxxx">{{ old('video_urls') }}</textarea>
                     <small class="text-muted">Masukkan URL YouTube, satu link per baris.</small>
                 </div>
@@ -84,12 +84,12 @@ function addVideoPair() {
                 </button>
             </div>
             <div class="form-group mb-1">
-                <label class="small mb-0">File Video <span class="text-danger">*</span></label>
-                <input type="file" name="videos[]" class="form-control-file" accept="video/*" required>
+                <label class="small mb-0" for="video_file_${idx}">File Video <span class="text-danger">*</span></label>
+                <input type="file" name="videos[]" id="video_file_${idx}" class="form-control-file" accept="video/*" required>
             </div>
             <div class="form-group mb-0">
-                <label class="small mb-0">Foto Cover <span class="text-muted">(opsional)</span></label>
-                <input type="file" name="video_covers[]" class="form-control-file" accept="image/*">
+                <label class="small mb-0" for="video_cover_${idx}">Foto Cover <span class="text-muted">(opsional)</span></label>
+                <input type="file" name="video_covers[]" id="video_cover_${idx}" class="form-control-file" accept="image/*">
                 <small class="text-muted">Gambar yang tampil di galeri sebelum video diputar.</small>
             </div>
         </div>`;

@@ -150,7 +150,7 @@
 
                             <!-- Tampilan informasi jenis pembayaran -->
                             <div class="col-12 text-center mt-4">
-                                <label class="form-label fw-semibold d-block mb-2">Jenis Pembayaran</label>
+                                <p class="form-label fw-semibold d-block mb-2">Jenis Pembayaran</p>
                                 <p class="fs-4 fw-bold text-success mb-0">Tunai / Cash</p>
                             </div>
 

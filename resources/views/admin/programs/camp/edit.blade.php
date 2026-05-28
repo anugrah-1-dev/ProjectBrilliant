@@ -101,7 +101,7 @@
                             <div class="col-md-6">
                                 @if ($program->thumbnails->count())
                                     <div class="form-group">
-                                        <label>Thumbnail Saat Ini</label>
+                                        <p class="mb-2">Thumbnail Saat Ini</p>
                                         <div class="d-flex flex-wrap gap-3">
                                             @foreach ($program->thumbnails as $thumb)
                                                 <div class="thumbnail-item text-center" id="thumb-{{ $thumb->id }}">
