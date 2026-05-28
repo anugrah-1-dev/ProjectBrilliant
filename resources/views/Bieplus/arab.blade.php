@@ -41,29 +41,52 @@
         <div class="container">
             <!-- Bagian kiri: Foto pamflet -->
             <div class="pamflet">
-                <img src={{ asset('asset/img/arabbaru1.jpg') }} alt="Pamflet Program Brilliant Alsaeid">
+                <img src="{{ asset('asset/img/arap.jpeg') }}" alt="Pamflet Program Brilliant Alsaeid">
             </div>
 
             <!-- Bagian kanan: Deskripsi program -->
             <div class="program-info">
                 <h2>Program Brilliant Alsaeid Arabic Course</h2>
                 <p>
-                    Program ini dirancang bagi kamu yang ingin menguasai Bahasa Arab secara aktif maupun pasif dalam 1
-                    bulan.
-                    Tersedia kelas Muhadatsah (Mustawa Awwal, Tsani, Tsalits) dan Baca Kitab (Tamhid, Muthawassith,
-                    Mutaqaddim).
-                    Peserta akan mendapat 5 kali pertemuan sehari, dibimbing pengajar berpengalaman, belajar dengan
-                    metode menarik,
-                    dan mengikuti program tambahan seperti Khithobah, Diroasah Jama’iyyah, Musyahadah, dan Fashl
-                    Khoriji.
+                    Menyediakan program bagi kamu yang ingin menguasai Bahasa Arab, baik secara aktif maupun pasif.
+                    Dalam waktu 1 bulan, kamu akan memiliki bekal berbicara dan memahami Bahasa Arab untuk menghadapi
+                    tantangan belajar berikutnya.
                 </p>
                 <ul>
-                    <li><strong>Program Offline:</strong> Rp. 665.000</li>
-                    <li><strong>Program Online:</strong> Rp. 385.000</li>
+                    <li><strong>1 Bulan (Program + Camp):</strong> Rp. 775.000</li>
+                    <li><strong>1 Bulan (Online non Camp):</strong> Rp. 396.000</li>
+                    <li><strong>2 Pekan (Program + Camp):</strong> Rp. 475.000</li>
+                    <li><strong>2 Pekan (Online non Camp):</strong> Rp. 189.000</li>
                 </ul>
+                <div class="program-list">
+                    <p><strong>Program Muhadatsah:</strong> I'dad (basic), Mustawa Awwal, Mustawa Tsani, Mustawa Tsalits</p>
+                    <p><strong>Program Baca Kitab:</strong> Tamhid, Muthawassith, Mutaqaddim, Tarjamah</p>
+                </div>
+                <div class="benefit-list">
+                    <p><strong>Benefit (program + camp):</strong></p>
+                    <ul>
+                        <li>6 kali pertemuan sehari (4 sesi kelas &amp; 2 kegiatan asrama)</li>
+                        <li>Pengajar berpengalaman</li>
+                        <li>Metode bervariasi</li>
+                        <li>Program tambahan: Khithobah, Diroasah Jama'iyyah, Musyahadah, Fashl Khoriji</li>
+                    </ul>
+                    <p><strong>Benefit (program online):</strong></p>
+                    <ul>
+                        <li>2x pertemuan 90 menit/hari</li>
+                        <li>Pengajar berpengalaman</li>
+                        <li>Metode bervariasi</li>
+                        <li>Program tambahan: Khithobah, Diroasah, Musyahadah, Munaqosyah</li>
+                    </ul>
+                </div>
                 <p>
-                    Kontak kami via Instagram @Brilliant_alsaeid_arabic, TikTok Brilliantalsaeid
+                    <strong>Instagram:</strong>
+                    <a href="https://www.instagram.com/brilliant_alsaeid_arabic" target="_blank">@brilliant_alsaeid_arabic</a><br>
+                    <strong>WhatsApp:</strong>
+                    <a href="https://wa.me/6281329969193" target="_blank">0813-2996-9193</a>,
+                    <a href="https://wa.me/6285715814094" target="_blank">0857-1581-4094</a>,
+                    <a href="https://wa.me/6285850698207" target="_blank">0858-5069-8207</a>
                 </p>
+
             </div>
 
 
@@ -179,8 +202,10 @@
                         style="display: none;">
                         <div class="program-card">
                             <div class="program-card-image-wrapper">
-                                <img src="{{ asset('storage/' . $program->thumbnail) }}" class="program-card-img"
-                                    alt="{{ $program->nama }}">
+                                @if($program->thumbnail)
+                                    <img src="{{ asset('storage/' . $program->thumbnail) }}" class="program-card-img"
+                                        alt="{{ $program->nama }}">
+                                @endif
                                 @if ($program->is_active)
                                     <span class="badge bg-success program-badge">Tersedia</span>
                                 @endif
@@ -450,11 +475,13 @@
 
             <div class="kontak-info">
                 <p><strong>Instagram:</strong> <a
-                        href="https://www.instagram.com/biecast_brilliankampunginggris?igsh=bzdhMGVyemIxZGQ="
-                        target="_blank">@biecast_brilliankampunginggris</a></p>
-                <p><strong>YouTube:</strong> <a
-                        href="https://youtube.com/@bieplusbrilliantenglishcourse?si=VxZw3YfiD4t5LciM"
-                        target="_blank">BIECAST Brilliant English Course</a></p>
+                        href="https://www.instagram.com/brilliant_alsaeid_arabic"
+                        target="_blank">@brilliant_alsaeid_arabic</a></p>
+                <p><strong>WhatsApp:</strong>
+                    <a href="https://wa.me/6281329969193" target="_blank">0813-2996-9193</a>,
+                    <a href="https://wa.me/6285715814094" target="_blank">0857-1581-4094</a>,
+                    <a href="https://wa.me/6285850698207" target="_blank">0858-5069-8207</a>
+                </p>
             </div>
 
             <div class="kontak-maps">
