@@ -205,7 +205,7 @@
                     @empty
                         <tr>
                             {{-- Sesuaikan colspan dengan jumlah kolom baru --}}
-                            <td colspan="13" class="text-center py-4">Belum ada pendaftar.</td>
+                            <td colspan="15" class="text-center py-4">Belum ada pendaftar.</td>
                         </tr>
                     @endforelse
                 </tbody>

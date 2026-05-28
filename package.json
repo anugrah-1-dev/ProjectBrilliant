@@ -14,9 +14,12 @@
         "vite": "^5.0.0"
     },
     "dependencies": {
+        "@ttskch/select2-bootstrap4-theme": "^1.5.2",
         "admin-lte": "^4.0.0-rc3",
         "aos": "^2.3.4",
+        "inputmask": "^5.0.9",
         "lightbox2": "^2.11.5",
+        "select2": "^4.1.0",
         "sweetalert2": "^11.22.2",
         "swiper": "^11.2.10"
     }

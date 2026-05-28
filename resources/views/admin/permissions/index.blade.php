@@ -166,25 +166,14 @@
     </style>
 @stop
 
-<!-- Bootstrap 5 CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Font Awesome (untuk icon seperti fas fa-plus, fa-edit, dll) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<!-- Bootstrap 5 JS (wajib untuk modal, dropdown, dll) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-@push('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@section('js')
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            alert("Script jalan"); // TESTING
-
             document.querySelectorAll('.btn-delete').forEach((btn) => {
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
-                    alert("Klik delete kepanggil"); // TESTING
 
                     const form = this.closest('form');
                     Swal.fire({
@@ -205,10 +194,7 @@
             });
         });
     </script>
-@endpush
 
-
-@push('scripts')
 
     <script>
         // Search & filter
@@ -257,3 +243,4 @@
             });
         </script>
     @endif
+@stop
